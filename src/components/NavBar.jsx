@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
+import MenuComidaIcon from "./icons/MenuComidaIcon";
 
 function NavBar() {
   const location = useLocation()
@@ -29,9 +30,9 @@ function NavBar() {
   }, []);
 
   return (
-    <div className={`top-0 py-4 px-16 w-full flex justify-start items-start gap-8 ${isScrolled ? 'text-amber-500' : 'text-white'} z-10 ${pathname !== '/' ? 'bg-amber-500 border-b border-amber-600' : 'bg-transparent fixed'}`}>
+    <div className={`top-0 py-4 px-8 md:px-16 w-full flex justify-start items-start gap-16 ${isScrolled ? 'bg-amber-500/80 backdrop-blur-sm text-white font-semibold border-b border-amber-600' : 'bg-transparent text-white'} transition-colors z-10 ${pathname !== '/' ? 'bg-amber-500 border-b border-amber-600' : 'bg-transparent fixed'}`}>
       <Link to='/'><button className='flex-none text-sm uppercase tracking-wider font-semibold'>Santa María</button></Link>
-      <Link to='/carta'><button className='flex-none text-sm uppercase tracking-wider font-semibold'>Carta</button></Link>
+      <Link to='/carta'><button className='flex justify-center items-center gap-2 text-sm uppercase tracking-wider font-semibold'><MenuComidaIcon />Carta</button></Link>
     </div>
   )
 }
