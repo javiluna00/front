@@ -13,7 +13,7 @@ function Sponsors() {
 
       <div className="max-w-screen-xl px-4 py-4 mx-auto text-center lg:py-6 lg:px-6">
         <div className="max-w-screen-lg mx-auto">
-          <h2 className="mb-4 text-xl font-extrabold tracking-tight text-gray-900 dark:text-white p-4">Nuestros <span className="text-amber-500">patrocinadores</span></h2>
+          <h2 className="mb-4 text-3xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white p-4">Nuestros <span className="text-amber-500">patrocinadores</span></h2>
 
           <div className="flex flex-wrap justify-center mt-4">
             {sponsors.map((sponsor, index) => (

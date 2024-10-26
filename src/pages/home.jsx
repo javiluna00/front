@@ -15,8 +15,9 @@ function Home() {
   useEffect(() => {
 
     const fetchData = async () => {
-      const response = await fetch('/home?populate[0]=*&populate[hero][populate]=imagen_fondo&populate[quienes_somos][populate]=imagen')
-
+      const response = await fetch('/home?populate[0]=*&populate[hero][populate]=imagen_fondo&populate[quienes_somos][populate]=imagen&populate[section_platos_destacados][populate][platos][populate]=imagenes'
+      )
+      console.log("Response : ", response)
       setData(response)
     }
 
@@ -29,7 +30,7 @@ function Home() {
         <Hero data={data["hero"][0]} />
         <SectionLugar data={data["quienes_somos"][0]} />
         <Sponsors />
-        <PlatosDestacados data={data["platos_destacados"] ? [0] : []} />
+        <PlatosDestacados data={data["section_platos_destacados"][0]} />
       </main>
     )
   }
