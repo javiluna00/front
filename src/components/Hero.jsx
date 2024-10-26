@@ -15,7 +15,7 @@ function Hero({ data }) {
         <p className="text-white text-sm md:text-lg font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"><BlocksRenderer content={data['descripcion']} /></p>
         <button className="flex text-sm cursor-pointer items-center justify-center rounded-lg bg-amber-600 hover:bg-amber-700 text-white md:px-8 md:py-4 px-4 py-3 font-bold leading-normal transition-all duration-200">{data['boton'] || 'Consulta nuestra carta'}</button>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 w-full h-40 bg-gradient-to-b from-transparent to-amber-100"></div>
+      <div className="absolute bottom-0 left-0 right-0 w-full h-40"></div>
     </div>
   )
 }
