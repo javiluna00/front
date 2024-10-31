@@ -4,6 +4,7 @@ import SectionLugar from "../components/SectionLugar"
 import useFetch from "../hooks/useFetch"
 import Sponsors from "../components/Sponsors"
 import PlatosDestacados from "../components/PlatosDestacados"
+import SectionLugarNew from "../components/SectionLugarNew"
 
 
 function Home() {
@@ -26,10 +27,10 @@ function Home() {
 
   if (data) {
     return (
-      <main>
+      <main className="w-full flex flex-col items-center justify-center">
         <Hero data={data["hero"][0]} />
-        <SectionLugar data={data["quienes_somos"][0]} />
-        <Sponsors />
+        <SectionLugarNew data={data["quienes_somos"][0]} />
+        {/*<Sponsors />*/}
         <PlatosDestacados data={data["section_platos_destacados"][0]} />
       </main>
     )

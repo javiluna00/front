@@ -7,19 +7,23 @@ function Hero({ data }) {
   const backgroundImageUrl = data?.['imagen_fondo'][0]?.url ? (import.meta.env.VITE_STRAPI_URL + data?.['imagen_fondo'][0]?.url) : './public/restaurante.webp'
 
   return (
-    <div className="bg-slate-200 h-screen relative">
-      <img src={backgroundImageUrl} className="w-full h-full object-cover brightness-[.30]" />
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center gap-4 w-full">
-        <div className='max-w-[300px] md:max-w-[600px]'>
-          <h1 className="mb-4 text-white text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.013em] whitespace-nowrap">{data?.['titulo'] || 'Santa Maria'}</h1>
-          <span className="text-white text-sm md:text-lg font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"><BlocksRenderer content={data['descripcion']} /></span>
+    <section className={`relative flex md:h-screen py-36 items-center bg-no-repeat bg-top bg-cover w-full flex flex-col justify-center items-center`} style={{backgroundImage: `url(${backgroundImageUrl})`}}>
+        <div className="absolute inset-0 bg-slate-950/70"></div>
+        <div className="container relative">
+            <div className="grid grid-cols-1 justify-center text-center">
+                <div className="">
+                    <h1 className="font-semibold lg:leading-normal leading-normal text-4xl lg:text-6xl text-white mb-5 font-platypi">Restaurante <br/> Santa María</h1>
+                    <span className="text-white/70 text-lg max-w-xl mx-auto"><BlocksRenderer content={data['descripcion']} /></span>
+                
+                    <div className="mt-8 flex justify-center items-center">
+                        <a href="reservation.html" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center text-amber-500 hover:text-white bg-transparent hover:bg-amber-500 border border-amber-500 rounded-md flex md:w-72 gap-2 w-full justify-center items-center"><MenuComidaIcon/>{data['boton'] || 'Consulta nuestra carta'}</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button className="flex text-sm w-[80%] md:w-auto uppercase cursor-pointer items-center justify-center rounded-lg bg-amber-600 hover:bg-amber-700 text-white md:px-8 md:py-4 px-4 py-3 font-bold leading-normal transition-all duration-200 gap-2"><MenuComidaIcon />{data['boton'] || 'Consulta nuestra carta'}</button>
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 w-full h-40"></div>
-    </div>
-  )
+    </section>
+    )
+  
 }
 
 export default Hero

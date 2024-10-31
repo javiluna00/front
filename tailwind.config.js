@@ -10,7 +10,9 @@ export default {
     extend: {
       fontFamily: {
         'floodplain': ['Floodplain', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
+        'platypi': ['Platypi', 'sans-serif'],
       },
       keyframes: {
         marquee: {
@@ -21,6 +23,9 @@ export default {
       animation: {
         marquee: 'marquee 20s linear infinite',
       },
+    },
+    fontFamily: {
+      sans: ['Poppins', 'Inter'],
     },
   },
   plugins: [
