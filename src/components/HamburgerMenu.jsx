@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import MenuIcon from "./icons/MenuIcon";
 import InstagramIcon from "./icons/InstagramIcon";
 import MailIcon from "./icons/MailIcon";
+import { Link } from "react-router-dom";
 
 
 function HamburgerMenu() {
@@ -73,7 +74,7 @@ function HamburgerMenu() {
         <MenuIcon size={24} />
       </button>
 
-      <span className="text-white text-2xl md:text-6xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.013em] whitespace-nowrap">Santa María</span>
+      <span className="text-white text-2xl md:text-6xl font-semibold leading-tight tracking-[-0.033em] whitespace-nowrap font-platypi">Santa María</span>
 
       {/* Menú lateral */}
       <div
@@ -95,8 +96,8 @@ function HamburgerMenu() {
           <h3 className="text-lg">Santa María</h3>
         </div>
         <nav className="flex flex-col grow items-start p-6 space-y-8 mt-10 h-4/6">
-          <a href="#" className="text-lg">Inicio</a>
-          <a href="#" className="text-lg">Carta</a>
+          <Link to="/" onClick={closeMenu} className="text-lg">Inicio</Link>
+          <Link to="/carta" onClick={closeMenu} className="text-lg">Carta</Link>
         </nav>
         <div className="flex justify-center p-6 h-20">
           <a href="https://www.instagram.com/santasmiafamilia/" className="text-lg text-white"><InstagramIcon size={25} /></a>

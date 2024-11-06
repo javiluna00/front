@@ -7,10 +7,10 @@ function Carta() {
   return (
     <div className="container mx-auto">
 
-      <h1 className="text-4xl text-amber-500 font-semibold my-10 w-full text-center ">Consulta nuestra <span className="text-amber-600">carta</span></h1>
+      <h1 className="text-4xl text-amber-500 font-semibold mb-10 w-full text-center mt-[100px] font-platypi">Consulta nuestra <span className="text-amber-600">carta</span></h1>
 
-      <div className="carta-container w-full h-full flex flex-col justify-center items-center gap-5">
-        <div className="tipologia w-full h-full flex justify-center items-center gap-4">
+      <div className="carta-container w-full h-full flex flex-col justify-center items-center gap-5 p-10">
+        <div className="tipologia w-full h-full flex justify-center items-center gap-4 flex-wrap">
           <button className={`text-sm px-4 py-2 rounded-full hover:shadow-md transition-all duration-200 hover:scale-105 ${selectedSubMenu == 'Desayunos' ? ' scale-105 bg-amber-500 text-white' : 'text-amber-500'} uppercase font-semibold`} onClick={() => setSelectedSubMenu("Desayunos")}>Desayunos</button>
           <button className={`text-sm px-4 py-2 rounded-full hover:shadow-md transition-all duration-200 hover:scale-105 ${selectedSubMenu == 'Entrantes' ? ' scale-105 bg-amber-500 text-white' : 'text-amber-500'} uppercase font-semibold`} onClick={() => setSelectedSubMenu('Entrantes')}>Entrantes</button>
           <button className={`text-sm px-4 py-2 rounded-full hover:shadow-md transition-all duration-200 hover:scale-105 ${selectedSubMenu == 'Carne' ? 'scale-105 bg-amber-500 text-white' : 'text-amber-500'} uppercase font-semibold`} onClick={() => setSelectedSubMenu('Carne')}>Carne</button>

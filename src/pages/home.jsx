@@ -5,6 +5,7 @@ import useFetch from "../hooks/useFetch"
 import Sponsors from "../components/Sponsors"
 import PlatosDestacados from "../components/PlatosDestacados"
 import SectionLugarNew from "../components/SectionLugarNew"
+import Horarios from "../components/Horarios"
 
 
 function Home() {
@@ -32,6 +33,7 @@ function Home() {
         <SectionLugarNew data={data["quienes_somos"][0]} />
         {/*<Sponsors />*/}
         <PlatosDestacados data={data["section_platos_destacados"][0]} />
+        <Horarios />
       </main>
     )
   }
