@@ -32,7 +32,7 @@ function Home() {
         <Hero data={data["hero"][0]} />
         <SectionLugarNew data={data["quienes_somos"][0]} />
         {/*<Sponsors />*/}
-        {<PlatosDestacados data={data["section_platos_destacados"][0]} />}
+        {/*<PlatosDestacados data={data["section_platos_destacados"][0]} />*/}
         <Horarios />
       </main>
     )
