@@ -4,34 +4,48 @@ import MapPinIcon from './icons/MapPinIcon'
 function SectionLugarNew({ data }) {
   const { titulo, descripcion, imagen, boton } = data
   return (
-    <section className=' w-full flex justify-center items-start p-10'>
-        <div className="container relative">
-            <div className="grid md:grid-cols-12 grid-cols-1 gap-6 items-center">
-                <div className="lg:col-span-4 md:col-span-12 lg:order-2">
-                    <div className="text-center">
-                        
+    <section className="w-full flex justify-center items-center p-10 py-20 bg-gray-50" id="quienessomos">
+  <div className="container mx-auto">
+    <div className="grid md:grid-cols-12 grid-cols-1 gap-8 items-center">
+      
+      {/* Imagen Izquierda */}
+      <div className="lg:col-span-4 md:col-span-6 flex justify-center">
+        <img
+          src={import.meta.env.VITE_STRAPI_URL + imagen[0].url}
+          className="rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
+          alt="Imagen plato 1"
+        />
+      </div>
 
-                        <h4 className="text-3xl font-semibold font-platypi">{titulo}</h4>
-                        <div className='mt-6'>
-                        <span className='text-slate-400 mt-6 font-sans'><BlocksRenderer content={descripcion} /></span>
-                        <div className="mt-4 flex justify-center items-center hover:text-amber-500 gap-2 cursor-pointer font-platypi">
-                          <MapPinIcon />
-                            <a href="aboutus.html" className="hover:text-amber-500 h6">{boton}</a>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="lg:col-span-4 md:col-span-6 lg:order-1">
-                    <img src={import.meta.env.VITE_STRAPI_URL + imagen[0].url} className="rounded shadow dark:shadow-gray-800" alt=""/>
-                </div>
-                
-                <div className="lg:col-span-4 md:col-span-6 lg:order-3">
-                    <img src={import.meta.env.VITE_STRAPI_URL + imagen[1].url} className="rounded shadow dark:shadow-gray-800" alt=""/>
-                </div>
-            </div>
+      {/* Texto Central */}
+      <div className="lg:col-span-4 md:col-span-12 text-center md:order-2">
+        <h4 className="text-3xl font-bold font-platypi text-gray-800">{titulo}</h4>
+        <p className="text-slate-600 mt-6 leading-relaxed font-sans">
+          <BlocksRenderer content={descripcion} />
+        </p>
+        <div className="mt-6 flex justify-center items-center gap-2">
+          <MapPinIcon className="text-amber-500" />
+          <a
+            href="aboutus.html"
+            className="text-amber-600 hover:text-amber-800 text-lg font-platypi transition"
+          >
+            {boton}
+          </a>
         </div>
-    </section>
+      </div>
+
+      {/* Imagen Derecha */}
+      <div className="lg:col-span-4 md:col-span-6 flex justify-center">
+        <img
+          src={import.meta.env.VITE_STRAPI_URL + imagen[1].url}
+          className="rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
+          alt="Imagen plato 2"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
   )
 }
 
