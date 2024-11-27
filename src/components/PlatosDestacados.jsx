@@ -9,7 +9,7 @@ function PlatosDestacados({ data = [] }) {
     <section className=' w-full flex justify-center items-start p-10 py-20' id="platos-destacados">
       <div className="container flex flex-col gap-10 justify-start items-center">
         <h2 className="text-3xl font-platypi font-bold leading-tight tracking-[-0.033em]">{titulo || 'Platos destacados'}</h2>
-        <BlocksRenderer content={descripcion} />
+        
         <div className="flex flex-wrap justify-center items-center gap-10">
           {platos.map((plato, index) => (
             <PlatoDestacadoCard key={index} plato={plato} />
