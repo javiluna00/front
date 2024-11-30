@@ -11,7 +11,7 @@ function MainLayout() {
   const { width, breakpoints } = useWidth()
 
   return (
-    <div className="min-h-screen absolute w-full">
+    <div className="min-h-screen absolute w-full bg-fondo">
       {width < breakpoints.md && <HamburgerMenu />}
       {width >= breakpoints.md && <NavBar />}
       <Outlet />

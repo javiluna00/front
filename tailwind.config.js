@@ -24,6 +24,19 @@ export default {
       animation: {
         marquee: 'marquee 20s linear infinite',
       },
+      colors: {
+        titulo: '#5A3A22',
+        fondo: "#F4F0E5",
+        detalles: '#A7A384',
+        contraste: '#FFF8E7',
+        boton: {
+          100: '#F3E6DB',
+          200: '#E6D3C1',
+          300: '#D9BFA7',
+          400: '#C9A17F',
+          500: '#B18E6D'
+        }
+      }
     },
   },
   plugins: [

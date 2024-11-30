@@ -4,7 +4,7 @@ import MapPinIcon from './icons/MapPinIcon'
 function SectionLugarNew({ data }) {
   const { titulo, descripcion, imagen, boton } = data
   return (
-    <section className="w-full flex justify-center items-center p-10 py-20 bg-gray-50" id="quienessomos">
+    <section className="w-screen min-h-screen flex justify-center items-center p-10 py-20 bg-fondo" id="quienessomos">
   <div className="container mx-auto">
     <div className="grid md:grid-cols-12 grid-cols-1 gap-8 items-center">
       

@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import MenuComidaIcon from "./icons/MenuComidaIcon";
-import MapPinIcon from "./icons/MapPinIcon";
+import { useWindowScroll } from "react-use";
+import gsap from 'gsap'
 
 
 function NavBar() {
@@ -35,12 +36,51 @@ function NavBar() {
     };
   }, [pathname]);
 
-  return (
-    <div className={`top-0 py-4 px-8 md:px-16 w-full flex justify-start items-start gap-16 ${isScrolled ? 'bg-amber-700/90 backdrop-blur-sm text-white font-semibold border-b border-amber-900' : 'bg-transparent text-white'} transition-colors z-10 fixed`}>
-      <Link to='/'><button className='flex-none text-sm uppercase tracking-wider font-semibold font-platypi hover:scale-105 transition-all'>Santa María</button></Link>
-      <Link to='/carta'><button className='flex justify-center items-center gap-2 text-sm uppercase tracking-wider font-semibold hover:scale-105 transition-all'><MenuComidaIcon />Carta</button></Link>
+  const containerRef = useRef(null)
+
+  const {y : windowScrollY} = useWindowScroll()
+  const [lastScrollY, setLastScrollY] = useState()
+  const [isNavVisible, setIsNavVisible] = useState(true)
+  useEffect(() => {
+    if(windowScrollY == 0) 
+    {
+      setIsNavVisible(true)
+      containerRef.current.classList.remove('floating-nav')
+    } else if (windowScrollY > lastScrollY)
+    {
+      setIsNavVisible(false)
+      containerRef.current.classList.add('floating-nav')
+    } else if( windowScrollY < lastScrollY)
+    {
+      setIsNavVisible(true)
+      containerRef.current.classList.add('floating-nav')
+    }
+    setLastScrollY(windowScrollY)
+  }, [windowScrollY])
+
+  useEffect(() => {
+    gsap.to(containerRef.current, {
+      y: isNavVisible ? 0 : -100,
+      opacity : isNavVisible ? 1 : 0,
+      duration: 0.2
+    })
+  }, [isNavVisible])
+
+  return(
+    <div className="fixed inset-x-[1/2] top-4 z-50 h-16 w-96 border-none transition-all duration-700 sm:inset-x-6" ref={containerRef}>
+        <header className="absolute top-1/2 w-full -translate-y-1/2">
+          <nav className="flex size-full items-center justify-center p-4">
+            <div className="flex items-center justify-center h-full w-full">
+              <div className="hidden md:flex justify-center items-center w-full gap-7">
+                <Link to={'/'} className="font-platypi nav-hover-btn ">Santa María</Link>
+                <Link to={'/carta'} className="font-platypi nav-hover-btn flex gap-2 justify-center items-center"><MenuComidaIcon/>Carta</Link>
+              </div>
+            </div>
+          </nav>
+        </header>
     </div>
   )
+
 }
 
 export default NavBar
