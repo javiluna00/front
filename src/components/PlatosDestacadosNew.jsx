@@ -35,7 +35,7 @@ const PlatosDestacadosNew = ({ dishes, descripcion, gsap }) => {
             scrub: 1,
             start: "top 80%", // El inicio es cuando el 80% de la pantalla pasa sobre el elemento.
             end: "center 40%",  // Termina cuando el 20% superior de la pantalla alcanza el elemento.
-            markers:true
+            markers:false
           },
           opacity:1,
       }
