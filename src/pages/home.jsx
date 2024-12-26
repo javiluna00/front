@@ -37,7 +37,7 @@ function Home() {
           <SectionLugarNew data={data["quienes_somos"][0]} gsap={gsap} />
           {/*<Sponsors />*/}
           {/*<PlatosDestacados data={data["section_platos_destacados"][0]} />*/}
-          <PlatosDestacadosNew dishes={data['section_platos_destacados'][0]["platos"]}/>
+          {/*<PlatosDestacadosNew dishes={data['section_platos_destacados'][0]["platos"]}/>*/}
           <Horarios gsap/>
         </main>
       </ReactLenis>
