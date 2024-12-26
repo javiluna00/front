@@ -29,7 +29,7 @@ const PlatosDestacadosNew = ({ dishes, descripcion }) => {
 
       <TitleReveal text={"Platos destacados"}/>
 
-      <span className="text-slate-600 mt-6 leading-relaxed font-sans md:text-xl text-md">
+      <span className="text-slate-600 my-8 leading-relaxed font-sans md:text-xl text-md">
         <BlocksRenderer content={descripcion} />
       </span>
       {/*<h4 className='md:text-[6rem] sm:text-[3rem] text-[2rem] font-bold font-platypi text-gray-800 uppercase'>Platos destacados</h4>*/}
