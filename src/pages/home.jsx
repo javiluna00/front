@@ -32,7 +32,7 @@ function Home() {
   if (data) {
     return (
       <ReactLenis root ref={lenisRef}>
-        <main>
+        <main className="overflow-x-hidden">
           <Hero data={data["hero"][0]} />
           <SectionLugarNew data={data["quienes_somos"][0]} gsap={gsap} />
           {/*<Sponsors />*/}
