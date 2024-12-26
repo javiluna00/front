@@ -28,10 +28,12 @@ const PlatosDestacadosNew = ({ dishes, descripcion }) => {
     <div className='md:min-h-screen my-auto container mx-auto px-4'>
 
       <TitleReveal text={"Platos destacados"}/>
+      <div className='my-8'>
+        <span className="text-slate-600 leading-relaxed font-sans md:text-xl text-md">
+          <BlocksRenderer content={descripcion} />
+        </span>
+      </div>
 
-      <span className="text-slate-600 my-8 leading-relaxed font-sans md:text-xl text-md">
-        <BlocksRenderer content={descripcion} />
-      </span>
       {/*<h4 className='md:text-[6rem] sm:text-[3rem] text-[2rem] font-bold font-platypi text-gray-800 uppercase'>Platos destacados</h4>*/}
       {mappedDishes.length > 0 && (
         <div>
