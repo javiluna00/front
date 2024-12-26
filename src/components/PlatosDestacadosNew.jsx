@@ -66,7 +66,7 @@ const PlatosDestacadosNew = ({ dishes, descripcion }) => {
                   className="absolute top-0 left-0 w-full h-full object-cover shadow-lg"
                 />
               </div>
-              <p className="text-start mt-4 text-2xl font-semibold text-gray-800">{dish.name}</p>
+              <p className="text-start mt-4 text-lg md:text-2xl font-semibold text-gray-800">{dish.name}</p>
             </SwiperSlide>
           ))}
         </Swiper>
