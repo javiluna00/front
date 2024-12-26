@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Hero from "../components/Hero"
-import SectionLugar from "../components/SectionLugar"
 import useFetch from "../hooks/useFetch"
-import Sponsors from "../components/Sponsors"
-import PlatosDestacados from "../components/PlatosDestacados"
+import {ReactLenis} from 'lenis/react'
 import SectionLugarNew from "../components/SectionLugarNew"
 import Horarios from "../components/Horarios"
-
+import PlatosDestacadosNew from "../components/PlatosDestacadosNew"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 function Home() {
 
   const [data, setData] = useState(null)
 
   const { fetch } = useFetch()
+  const lenisRef = useRef()
 
   useEffect(() => {
 
@@ -22,19 +24,23 @@ function Home() {
       console.log("Response : ", response)
       setData(response)
     }
-
     fetchData()
+
+
   }, [])
 
   if (data) {
     return (
-      <main className="w-full flex flex-col items-center justify-center">
-        <Hero data={data["hero"][0]} />
-        <SectionLugarNew data={data["quienes_somos"][0]} />
-        {/*<Sponsors />*/}
-        {/*<PlatosDestacados data={data["section_platos_destacados"][0]} />*/}
-        <Horarios />
-      </main>
+      <ReactLenis root ref={lenisRef}>
+        <main>
+          <Hero data={data["hero"][0]} />
+          <SectionLugarNew data={data["quienes_somos"][0]} gsap={gsap} />
+          {/*<Sponsors />*/}
+          {/*<PlatosDestacados data={data["section_platos_destacados"][0]} />*/}
+          <PlatosDestacadosNew dishes={data['section_platos_destacados'][0]["platos"]}/>
+          <Horarios gsap/>
+        </main>
+      </ReactLenis>
     )
   }
 

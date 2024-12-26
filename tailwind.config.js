@@ -35,7 +35,13 @@ export default {
           300: '#D9BFA7',
           400: '#C9A17F',
           500: '#B18E6D'
-        }
+        },
+        bulletGray: '#4a5568', // Gray-800
+        bulletActive: '#2d3748',
+      },
+      spacing: {
+        bulletSize: '16px',
+        bulletActiveSize: '20px',
       }
     },
   },

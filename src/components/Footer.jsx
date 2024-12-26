@@ -18,14 +18,6 @@ function Footer() {
               Bar Santa María
             </Link>
           </li>
-          <li>
-            <Link
-              to="/carta"
-              className="hover:text-amber-500 transition"
-            >
-              Carta
-            </Link>
-          </li>
         </ul>
       </div>
 
@@ -42,7 +34,7 @@ function Footer() {
         <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
         <div className="flex justify-center md:justify-start gap-4">
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/people/BAR-SANTA-MAR%C3%8DA/100063506442359/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-amber-500 transition"

@@ -12,6 +12,16 @@
   src: url("/Floodplain Demo.otf");
 }
 @layer utilities {
+  .swiper-pagination-bullet {
+    @apply w-4 h-4 bg-gray-800 opacity-100 transition-transform transform;
+  }
+  .swiper-pagination-bullet-active {
+    @apply w-5 h-5 bg-gray-900 scale-110; /* Más grande y oscuro para el activo */
+  }
+  .swiper-pagination {
+    @apply mt-8 flex justify-center space-x-2; /* Baja y centra los bullets */
+  }
+
   .border-hsla {
     @apply border border-white/20;
   }

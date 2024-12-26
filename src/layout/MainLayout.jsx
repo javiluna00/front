@@ -12,8 +12,8 @@ function MainLayout() {
 
   return (
     <div className="min-h-screen absolute w-full bg-fondo">
-      {width < breakpoints.md && <HamburgerMenu />}
-      {width >= breakpoints.md && <NavBar />}
+      {/*width < breakpoints.md && <HamburgerMenu />*/}
+      {/*width >= breakpoints.md && <NavBar />*/}
       <Outlet />
       <Footer />
     </div>

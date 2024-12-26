@@ -1,9 +1,11 @@
 import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 import MenuComidaIcon from './icons/MenuComidaIcon'
-import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
+
+import Button from './Button'
+import MapPinIcon from './icons/MapPinIcon'
 gsap.registerPlugin(ScrollTrigger)
 function Hero({ data }) {
 
@@ -38,10 +40,8 @@ function Hero({ data }) {
                     <div className="h-full flex flex-col justify-center text-center">
                             <h1 className="font-semibold lg:leading-normal leading-normal text-4xl lg:text-6xl text-white mb-5 font-platypi">Restaurante <br/> Santa María</h1>
                             <span className="text-white/70 text-lg max-w-xl mx-auto"><BlocksRenderer content={data['descripcion']} /></span>
-                        
-                            <div className="mt-8 flex justify-center items-center">
-                                <Link to="/carta" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center text-boton-300 hover:text-white bg-transparent hover:bg-boton-500 hover:border-boton-500 border border-boton-300 rounded-md flex md:w-72 gap-2 w-full justify-center items-center"><MenuComidaIcon/>{data['boton'] || 'Consulta nuestra carta'}</Link>
-                            </div>
+                            <Button leftIcon={<MapPinIcon className="text-amber-500" />} title={"¡Visítanos!"} link={"https://maps.app.goo.gl/xZKSmBnEQwWGxhAa6"} blank dark={false}/>
+                            
                     </div>
                 </div>
                 
