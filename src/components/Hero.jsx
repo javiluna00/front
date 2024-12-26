@@ -9,7 +9,7 @@ import MapPinIcon from './icons/MapPinIcon'
 gsap.registerPlugin(ScrollTrigger)
 function Hero({ data }) {
 
-    useGSAP(() => {
+    /*useGSAP(() => {
         gsap.set('#hero-container', {
             clipPath: 'polygon(14% 0%, 78% 0%, 92% 90%, 5% 100%)',
             borderRadius: "0, 0, 40%, 10%"
@@ -26,7 +26,7 @@ function Hero({ data }) {
                 scrub:true
             }
         })
-    }, {revertOnUpdate:true})
+    }, {revertOnUpdate:true})*/
 
     const backgroundImageUrl = data?.['imagen_fondo'][0]?.url ? (import.meta.env.VITE_STRAPI_URL + data?.['imagen_fondo'][0]?.url) : './public/restaurante.webp'
 

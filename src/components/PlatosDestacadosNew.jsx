@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -8,9 +8,12 @@ import 'swiper/css/pagination';
 import './customStyles.css';
 import TitleReveal from './TitleReveal';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { useGSAP } from '@gsap/react';
 
-const PlatosDestacadosNew = ({ dishes, descripcion }) => {
+const PlatosDestacadosNew = ({ dishes, descripcion, gsap }) => {
   const [mappedDishes, setMappedDishes] = useState([]);
+  const swiperRef = useRef()
+  const triggerRef = useRef()
 
   useEffect(() => {
     if (dishes) {
@@ -24,8 +27,23 @@ const PlatosDestacadosNew = ({ dishes, descripcion }) => {
     }
   }, [dishes]);
 
+  useGSAP(() => {
+    gsap.to(swiperRef.current,
+      {
+        scrollTrigger: {
+            trigger: triggerRef.current,
+            scrub: 1,
+            start: "top 80%", // El inicio es cuando el 80% de la pantalla pasa sobre el elemento.
+            end: "center 40%",  // Termina cuando el 20% superior de la pantalla alcanza el elemento.
+            markers:true
+          },
+          opacity:1,
+      }
+    )
+  }, [])
+
   return (
-    <div className='md:min-h-screen my-auto container mx-auto px-4'>
+    <div className='md:min-h-screen my-auto container mx-auto px-4' ref={triggerRef}>
 
       <TitleReveal text={"Platos destacados"}/>
       <div className='my-8'>
@@ -36,7 +54,7 @@ const PlatosDestacadosNew = ({ dishes, descripcion }) => {
 
       {/*<h4 className='md:text-[6rem] sm:text-[3rem] text-[2rem] font-bold font-platypi text-gray-800 uppercase'>Platos destacados</h4>*/}
       {mappedDishes.length > 0 && (
-        <div>
+        <div className='sinopacidad' ref={swiperRef}>
         
         <Swiper
           className='w-full'
