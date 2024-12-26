@@ -7,8 +7,9 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import './customStyles.css';
 import TitleReveal from './TitleReveal';
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
-const PlatosDestacadosNew = ({ dishes }) => {
+const PlatosDestacadosNew = ({ dishes, descripcion }) => {
   const [mappedDishes, setMappedDishes] = useState([]);
 
   useEffect(() => {
@@ -27,6 +28,10 @@ const PlatosDestacadosNew = ({ dishes }) => {
     <div className='md:min-h-screen my-auto container mx-auto px-4'>
 
       <TitleReveal text={"Platos destacados"}/>
+
+      <span className="text-slate-600 mt-6 leading-relaxed font-sans md:text-xl text-md">
+        <BlocksRenderer content={descripcion} />
+      </span>
       {/*<h4 className='md:text-[6rem] sm:text-[3rem] text-[2rem] font-bold font-platypi text-gray-800 uppercase'>Platos destacados</h4>*/}
       {mappedDishes.length > 0 && (
         <div>
