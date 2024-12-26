@@ -53,8 +53,9 @@ const PlatosDestacadosNew = ({ dishes, descripcion, gsap }) => {
       </div>
 
       {/*<h4 className='md:text-[6rem] sm:text-[3rem] text-[2rem] font-bold font-platypi text-gray-800 uppercase'>Platos destacados</h4>*/}
+      <div className='sinopacidad' ref={swiperRef}>
       {mappedDishes.length > 0 && (
-        <div className='sinopacidad' ref={swiperRef}>
+        
         
         <Swiper
           className='w-full'
@@ -90,8 +91,8 @@ const PlatosDestacadosNew = ({ dishes, descripcion, gsap }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
     )}
+    </div>
     </div>
   );
 };
