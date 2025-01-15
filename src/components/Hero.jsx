@@ -1,11 +1,10 @@
 import { BlocksRenderer } from '@strapi/blocks-react-renderer'
-import MenuComidaIcon from './icons/MenuComidaIcon'
-import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
 import Button from './Button'
 import MapPinIcon from './icons/MapPinIcon'
+import PhoneIcon from './icons/PhoneIcon'
 gsap.registerPlugin(ScrollTrigger)
 function Hero({ data }) {
 
@@ -40,7 +39,10 @@ function Hero({ data }) {
                     <div className="h-full flex flex-col justify-center text-center">
                             <h1 className="font-semibold lg:leading-normal leading-normal text-4xl lg:text-6xl text-white mb-5 font-platypi">Restaurante <br/> Santa María</h1>
                             <span className="text-white/70 text-lg max-w-xl mx-auto"><BlocksRenderer content={data['descripcion']} /></span>
+                            <div className='flex w-full justify-center items-center md:flex-row flex-col gap-4'>
                             <Button leftIcon={<MapPinIcon className="text-amber-500" />} title={"¡Visítanos!"} link={"https://maps.app.goo.gl/xZKSmBnEQwWGxhAa6"} blank dark={false}/>
+                            <Button leftIcon={<PhoneIcon className="text-amber-500"/>} title="¡Haz tu reserva!" link={"tel:+34957166347"} blank dark={false}/>
+                            </div>
                             
                     </div>
                 </div>

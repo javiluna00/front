@@ -7,6 +7,7 @@ import Horarios from "../components/Horarios"
 import PlatosDestacadosNew from "../components/PlatosDestacadosNew"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
+import Contacto from "../components/Contacto"
 gsap.registerPlugin(ScrollTrigger)
 
 function Home() {
@@ -39,6 +40,7 @@ function Home() {
           {/*<PlatosDestacados data={data["section_platos_destacados"][0]} />*/}
           {<PlatosDestacadosNew dishes={data['section_platos_destacados']["platos"]} descripcion={data['section_platos_destacados']["descripcion"]} gsap={gsap}/>}
           <Horarios gsap/>
+          <Contacto/>
         </main>
       </ReactLenis>
     )
